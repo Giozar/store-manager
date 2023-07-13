@@ -1,22 +1,26 @@
 import Product from "../models/product.models.js";
-
+import Provider from "../models/provider.models.js"
 export const createProduct = async (req, res) => {
 
-    const { productName, description, category, price, quantity } = req.body;
+    const { productName, description, category, price, quantity, providerId } = req.body;
 
     try {
+        const providerFound = await Provider.findById(providerId);
+        if(!providerFound) return res.status(400).json({message: 'the provider not exists'});
+        
         const newProduct = new Product({
             productName,
             description,
             category,
             price,
             quantity,
+            providerId: providerFound._id,
         });
-
         const productSaved = await newProduct.save();
         res.json(productSaved);
+
     } catch (error) {
-        console.log(error);
+        res.status(500).json({ message: 'something went wrong' });
     }
 }
 

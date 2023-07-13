@@ -24,7 +24,7 @@ const productSchema = new mongoose.Schema({
         type: Number,
         require: true,
     },
-    provider: { 
+    providerId: { // 12 caracteres para que lo cuente como Id
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'Provider' 
     },
