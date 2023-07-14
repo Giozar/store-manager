@@ -5,7 +5,7 @@ export const createProvider = async (req, res) => {
     try {
         const providerFound = await Provider.findOne({providerName});
         if(providerFound) return res.status(400).json({
-            message: "the provider is already exists",
+            message: `the provider with name ${ providerName } is already exists`,
         });
 
         const newProvider = new Provider({

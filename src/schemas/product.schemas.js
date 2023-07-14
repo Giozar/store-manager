@@ -16,8 +16,8 @@ export const productSchema = z.object({
     quantity: z.number({
         required_error: 'the quantity name is required'
     }),
-    provider: z.string({
-        required_error: 'the provider name is required'
+    providerId: z.string().refine((value) => /^[0-9a-zA-Z]{24}$/.test(value), {
+        message: 'providerId must be a valid ObjectId',
     }),
 
 })

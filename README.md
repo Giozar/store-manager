@@ -1,4 +1,4 @@
-# Authenticator-Tasks
+# Store-manager
 ***
 ## Description
 -Apliación de backend, que hace resgitros y autentifiaciones de usuarios, gestion de la tienda al igual que pueden realizar compras los usuarios, filtraciones, busquedas de productos, infomación sobre productos y porveedores.
@@ -25,11 +25,9 @@ A list of technologies used within the project:
 A little intro about the installation. 
 ```
 $ git clone https://github.com/Giozar/store-manager.git
-$ npm start dev
-$ npm star build
+$ npm install
+$ npm run dev
 ```
 Side information: To use the application in a special environment use ```lorem ipsum``` to start
 ## Collaboration
 ***
-Appliación basada de pratica de https://www.youtube.com/watch?v=NmkY4JgS21A&list=PLetuJVCrfMJLqHdici9yGcrLG67MgKSwZ&index=2&t=3353s
-de FaztWeb

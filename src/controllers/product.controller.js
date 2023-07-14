@@ -5,6 +5,11 @@ export const createProduct = async (req, res) => {
     const { productName, description, category, price, quantity, providerId } = req.body;
 
     try {
+        const productFound = await Provider.findOne({productName});
+        if(productName) return res.status(400).json({
+            message: `the product with name ${ productName } is already exists`,
+        });
+        
         const providerFound = await Provider.findById(providerId);
         if(!providerFound) return res.status(400).json({message: 'the provider not exists'});
         
